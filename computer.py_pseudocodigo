@@ -1,0 +1,41 @@
+
+memory[50] = 400
+memory[100] = 19
+memory[130] = 10
+
+memory[60] = X
+X <- mem[60] * 4
+X <- X + memory[50]
+X <- X + memory[100]
+X <- X - memory[130]
+# memory[150] = X
+halt
+
+17 50
+15 7
+10 60
+29 60
+2 50
+2 100
+6 130
+10 150
+255
+
+    goto main
+    wb 0
+
+a ww 400
+b ww 19
+c ww 10
+d ww 0
+e ww 0
+
+main        div a
+            jz linha_jump
+            store d
+linha_jump mult2 d
+            add a
+            add b
+            sub c
+            store e
+            halt
